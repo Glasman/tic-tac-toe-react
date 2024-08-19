@@ -12,6 +12,11 @@ function TicTacToe() {
        const newTiles = [...tiles];
        newTiles[index] = playerTurn;
        setTiles(newTiles);
+       if(playerTurn === PLAYER_X){
+        setPlayerTurn(PLAYER_O);
+       } else {
+        setPlayerTurn(PLAYER_X);
+       }
     }
 
     return (
