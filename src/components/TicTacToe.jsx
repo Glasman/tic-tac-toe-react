@@ -4,8 +4,15 @@ import Board from "./Board";
 const PLAYER_X = "X";
 const PLAYER_O = "O";
 
-function checkWinner(){
-    console.log('check winner')
+const winningCombinations = [
+  //rows
+  { combo: [0, 1, 2], strikeClass: "strike-row-1" },
+  { combo: [3, 4, 5], strikeClass: "strike-row-2" },
+  { combo: [6, 7, 8], strikeClass: "strike-row-3" },
+];
+
+function checkWinner() {
+  console.log("check winner");
 }
 
 function TicTacToe() {
