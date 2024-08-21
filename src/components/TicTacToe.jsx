@@ -57,6 +57,13 @@ function TicTacToe() {
   const [strikeClass, setStrikeClass] = useState();
   const [gameState, setGameState] = useState(GameState.inProgress);
 
+const handleReset = () => {
+    setGameState(GameState.inProgress);
+    setTiles(Array(9).fill(null));
+    setPlayerTurn(PLAYER_X);
+    setStrikeClass(null);
+}
+
   const handleTileClick = (index) => {
     if(gameState !== GameState.inProgress){
         return;
@@ -90,7 +97,7 @@ function TicTacToe() {
         onTileClick={handleTileClick}
       />
       <GameOver gameState={gameState} />
-      <Reset />
+      <Reset gameState={gameState} onReset={handleReset} />
     </div>
   );
 }
